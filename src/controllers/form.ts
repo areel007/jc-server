@@ -59,7 +59,7 @@ export const submitForm = [
 
       const mailOptions = {
         from: process.env.EMAIL_USERNAME,
-        to: "delzmiyaki@gmail.com",
+        to: process.env.EMAIL_RECEIVER,
         subject: "Form Submission from gatewayjobcenter",
         text: message,
       };
