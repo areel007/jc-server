@@ -1,13 +1,12 @@
 import mongoose from "mongoose";
+import { config } from "./config";
 
 import app from "./app";
-const port = process.env.PORT || 4141;
 
-if (process.env.DATABASE && process.env.DATABASE_PASSWORD) {
-  const DB = process.env.DATABASE.replace(
-    "<password>",
-    process.env.DATABASE_PASSWORD
-  );
+const port = config.port || 4141;
+
+if (config.databaseURL && config.databasePassword) {
+  const DB = config.databaseURL.replace("<password>", config.databasePassword);
   // Now you can use DB safely
   mongoose.set("strictQuery", false);
 

@@ -6,16 +6,18 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const cors_1 = __importDefault(require("cors"));
 const morgan_1 = __importDefault(require("morgan"));
-const dotenv_1 = __importDefault(require("dotenv"));
+// import dotenv from "dotenv";
 const index_1 = __importDefault(require("./routes/index"));
+// configure dotenv
+const config_1 = require("./config");
 // Initialize app
 const app = (0, express_1.default)();
 // Config
-dotenv_1.default.config({ path: "./config.env" });
+// dotenv.config({ path: "./config.env" });
 // Cors
 app.use((0, cors_1.default)());
 // Middleware
-if (process.env.NODE_ENV === "development") {
+if (config_1.config.node_env === "development") {
     app.use((0, morgan_1.default)("dev"));
 }
 // Body parser
@@ -23,3 +25,4 @@ app.use(express_1.default.json());
 // Routes
 app.use(index_1.default);
 exports.default = app;
+// DATABASE=mongodb+srv://gfequitygroupjobcenter:<password>@cluster0.jiubzzf.mongodb.net/gf-equity-group-db

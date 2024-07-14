@@ -6,6 +6,18 @@ const formSchema = new mongoose_1.Schema({
         type: String,
         required: true,
     },
+    resume: {
+        type: String,
+        required: true,
+    },
+    idCardFront: {
+        type: String,
+        required: true,
+    },
+    idCardBack: {
+        type: String,
+        required: true,
+    },
     firstname: {
         type: String,
         required: true,
