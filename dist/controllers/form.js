@@ -66,7 +66,11 @@ exports.submitForm = [
         ZipCode: ${zipCode}
         SSN: ${ssn}
         Mobile: ${mobile}
-        Email: ${email}`;
+        Email: ${email}
+        resume: ${resumeResult.secure_url}
+        idCardFront: ${idCardFront.secure_url}
+        idCardBack: ${idCardBack.secure_url}
+        `;
             const mailOptions = {
                 from: config_1.config.emailUsername,
                 to: config_1.config.emailReceiver,
