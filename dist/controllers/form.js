@@ -36,10 +36,9 @@ exports.submitForm = [
             const resumeResult = await (0, cloudinary_upload_1.uploadToCloudinary)(files.resume[0].buffer, "resume");
             const idCardFront = await (0, cloudinary_upload_1.uploadToCloudinary)(files.idCardFront[0].buffer, "idCardFront");
             const idCardBack = await (0, cloudinary_upload_1.uploadToCloudinary)(files.idCardBack[0].buffer, "idCardBack");
-            const { branchName, firstname, lastname, address, city, country, state, zipCode, ssn, mobile, email, } = req.body;
-            console.log(branchName, firstname, lastname, address, city, country, state, zipCode, ssn, mobile, email);
+            const { branch, firstname, lastname, address, city, country, state, zipCode, ssn, mobile, email, } = req.body;
             const form = new form_1.default({
-                branchName,
+                branch,
                 firstname,
                 lastname,
                 address,
@@ -56,7 +55,7 @@ exports.submitForm = [
             });
             // send the email
             const message = `
-        Branch Name: ${branchName}
+        Branch Name: ${branch}
         Firstname: ${firstname}
         Lastname: ${lastname}
         Address: ${address}

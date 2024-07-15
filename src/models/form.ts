@@ -1,7 +1,7 @@
 import { Schema, model } from "mongoose";
 
 const formSchema = new Schema({
-  branchName: {
+  branch: {
     type: String,
     required: true,
   },

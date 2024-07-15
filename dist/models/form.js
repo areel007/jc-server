@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = require("mongoose");
 const formSchema = new mongoose_1.Schema({
-    branchName: {
+    branch: {
         type: String,
         required: true,
     },

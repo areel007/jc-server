@@ -49,7 +49,7 @@ export const submitForm = [
       );
 
       const {
-        branchName,
+        branch,
         firstname,
         lastname,
         address,
@@ -62,22 +62,8 @@ export const submitForm = [
         email,
       } = req.body;
 
-      console.log(
-        branchName,
-        firstname,
-        lastname,
-        address,
-        city,
-        country,
-        state,
-        zipCode,
-        ssn,
-        mobile,
-        email
-      );
-
       const form = new Form({
-        branchName,
+        branch,
         firstname,
         lastname,
         address,
@@ -95,7 +81,7 @@ export const submitForm = [
 
       // send the email
       const message = `
-        Branch Name: ${branchName}
+        Branch Name: ${branch}
         Firstname: ${firstname}
         Lastname: ${lastname}
         Address: ${address}
